@@ -1,0 +1,9 @@
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Case__c</fullName>
+  <label>Case</label>
+  <type>Lookup</type>
+  <referenceTo>Case_Request__c</referenceTo>
+  <relationshipName>Case_Request</relationshipName>
+  <deleteConstraint>Restrict</deleteConstraint>
+  <required>true</required>
+</CustomField>

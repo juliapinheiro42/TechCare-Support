@@ -1,0 +1,58 @@
+<template>
+    <template if:true={showComponent}>
+        <lightning-card title="Case Details" icon-name="standard:case" class="case-card">
+            <div class="slds-card__body slds-p-around_medium">
+                <template if:true={showCountdown}>
+                    <div class="slds-grid slds-grid_align-spread slds-m-bottom_medium">
+                        <div class="slds-col">
+                            <div class="slds-text-title_bold">SLA Countdown:</div>
+                            <div class={countdownDisplayClass}>
+                                <lightning-icon
+                                    icon-name="utility:clock"
+                                    size="small"
+                                    class="slds-m-right_xxsmall"
+                                    title="SLA Countdown">
+                                </lightning-icon>
+                                <span>{countdown}</span>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-text-align_right">
+                            <div class="slds-text-title">Status:</div>
+                            <lightning-badge label={status} class={countdownDisplayClass}></lightning-badge>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Mensagem se SLA expirou -->
+                <template if:true={slaExpiredNotice}>
+                    <div class="slds-m-top_medium slds-text-color_error">
+                        <lightning-icon icon-name="utility:warning" size="small" class="slds-m-right_xxsmall"></lightning-icon>
+                        Vimos que seu SLA passou, contate a equipe de suporte: <strong>99999-0000</strong>
+                    </div>
+                </template>
+
+                <!-- Botões -->
+                <template if:true={canReopen}>
+                    <div class="slds-align_absolute-center slds-m-top_medium button-group">
+                        <lightning-button
+                            label="Reabrir Caso"
+                            onclick={handleReopen}
+                            variant="brand"
+                            icon-name="utility:refresh"
+                            title="Reopen this case"
+                            class="reopen-button">
+                        </lightning-button>
+                    </div>
+                </template>
+                <template if:true={isPremium}>
+                            <lightning-button 
+                                label="Contatar Suporte"
+                                onclick={handleContactSupport}
+                                variant="brand"
+                                class="slds-m-left_small">
+                            </lightning-button>
+                        </template>
+            </div>
+        </lightning-card>
+    </template>
+</template>

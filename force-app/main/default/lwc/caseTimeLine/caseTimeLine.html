@@ -1,0 +1,32 @@
+<template>
+  <template if:true={hasHistory}>
+    <lightning-card title="Case Timeline">
+      <ul class="slds-timeline">
+        <template for:each={history} for:item="item">
+          <li key={item.Id} class="slds-timeline__item">
+            <span class="slds-timeline__icon">
+              <lightning-icon icon-name="utility:check" size="small"></lightning-icon>
+            </span>
+            <div class="slds-media__body">
+              <p>
+                <strong>Status:</strong>
+                <template if:true={item.SLA_Met__c}>
+                  SLA met ✅
+                </template>
+                <template if:false={item.SLA_Met__c}>
+                  SLA missed ⚠️
+                </template>
+              </p>
+              <p><strong>Closed at:</strong> {item.Time_Closed__c}</p>
+              <p class="slds-text-color_weak">{item.CreatedDate}</p>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </lightning-card>
+  </template>
+
+  <template if:false={hasHistory}>
+    <p class="slds-text-body_small slds-p-horizontal_medium">Este caso ainda não possui histórico.</p>
+  </template>
+</template>

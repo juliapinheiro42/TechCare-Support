@@ -1,0 +1,55 @@
+:host {
+    display: block;
+    margin: 1rem 0;
+}
+
+.slds-timeline {
+    padding-left: 0;
+    list-style: none;
+    border-left: 2px solid #e0e5ee; /* Linha da timeline */
+    margin-left: 1rem;
+}
+
+.slds-timeline__item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.slds-timeline__icon {
+    position: absolute;
+    left: -1.3rem;
+    top: 0.2rem;
+    background-color: #0176d3; /* azul Salesforce */
+    color: #fff;
+    border-radius: 50%;
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    box-shadow: 0 0 0 2px #fff; /* Borda branca ao redor */
+}
+
+.slds-media__body {
+    background: #f9f9f9;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.slds-media__body p {
+    margin: 0.25rem 0;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.slds-media__body p strong {
+    color: #0176d3;
+}
+
+.slds-text-color_weak {
+    font-size: 0.75rem;
+    color: #888;
+}
