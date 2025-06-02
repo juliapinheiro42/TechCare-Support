@@ -39,8 +39,6 @@ Sistema de **gestão de requisições de suporte** com diferenciação entre cli
     - Se `RecordType = Premium` → `SLA = NOW() + 8h`.  
     - Se `Standard` → `SLA = NOW() + 24h`.  
   - Se `Status` está vazio → atribui `Status = New`.  
-
-- **Assignment Flow** →  
   - Se `Priority = High` e `RecordType = Premium` → notifica Owner e atribui ao usuário específico.  
 
 - **Email Notification Flow** →  
@@ -197,7 +195,7 @@ GET /services/apexrest/caseinfo/{caseId}
 - Automatizar envio de **agradecimento** após `Customer_Satisfaction_Score__c`.  
 - Relatório de **média de satisfação** por agente.  
 - Expor mais endpoints REST para integração.  
-
+- Criar possibilidade de contatar equipe de support se status is not closed e SLA_Met is false
 ---
 
 ## ✨ Autor
